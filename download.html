@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>下载 Tether</title>
+  <meta name="description" content="下载 Tether：Mac（Apple 芯片和 Intel 处理器）、Windows（x64 和 ARM64）、Linux（.deb 和 AppImage）。附各系统的安装步骤、SHA-256 校验值，以及更新和卸载的说明。">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/icon/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/icon/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="index.html"><img src="assets/icon/favicon-64.png" width="24" height="24" alt="">Tether</a>
+      <nav class="nav-links" aria-label="网站">
+        <a href="index.html">概览</a>
+        <a href="docs.html">文档</a>
+        <a class="btn btn-sm" href="download.html" aria-current="page">下载</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="wrap dl-head">
+      <img src="assets/icon/icon-512.png" width="112" height="112" alt="">
+      <h1>下载 Tether</h1>
+      <p class="dl-meta">版本 <span data-rel="version">0.5.1</span><span data-rel-show="date" hidden> · <span data-rel="date"></span></span></p>
+      <p class="dl-hint">装在你平时用终端的那台电脑上。<span class="nw">手机不用装 App，</span><span class="nw">配对以后用浏览器打开就行。</span></p>
+      <p class="dl-mobile" data-mobile-note hidden>你现在用的是手机或平板。Tether 要装在电脑上，Mac、Windows、Linux 都可以。可以把这个网址发到电脑上，在电脑上下载。</p>
+    </header>
+
+    <!-- 三个系统的安装包。没有 JavaScript 时，按钮都指向 GitHub 的发布页；有的话，site.js 按 release.js 填上真正的下载地址和大小，并标出访客用的系统 -->
+    <div class="wrap os-grid">
+      <section class="os" id="mac" data-os="mac" aria-labelledby="mac-title">
+        <p class="os-yours">你的电脑</p>
+        <h2 id="mac-title">Mac<span class="tag" data-beta="mac" hidden>测试版</span></h2>
+        <p class="os-req">macOS 12 或更高版本</p>
+        <div class="os-dl">
+          <a class="btn" href="https://github.com/joyce1998/Tether/releases/latest" data-file="mac-arm64-dmg" data-note="mac">Apple 芯片<small>DMG<span data-size></span></small></a>
+          <a class="btn btn-neutral" href="https://github.com/joyce1998/Tether/releases/latest" data-file="mac-x64-dmg" data-note="mac">Intel 处理器<small>DMG<span data-size></span></small></a>
+        </div>
+        <p class="os-hint">不确定的话，点屏幕左上角的苹果菜单，选「关于本机」：写着「芯片 Apple&nbsp;M1」这类的选 Apple&nbsp;芯片，写着「处理器」和 Intel 的选 Intel&nbsp;处理器。</p>
+        <p class="os-alt">ZIP 格式：<a href="https://github.com/joyce1998/Tether/releases/latest" data-file="mac-arm64-zip" data-note="mac">Apple 芯片</a> · <a href="https://github.com/joyce1998/Tether/releases/latest" data-file="mac-x64-zip" data-note="mac">Intel 处理器</a></p>
+        <p class="after-download" data-after="mac" hidden>正在下载。Tether 没有经过 Apple 公证，第一次打开时 macOS 会拦一下，<a href="#first-open">看看怎么放行</a>。</p>
+        <a class="more os-steps" href="#install-mac">在 Mac 上安装</a>
+      </section>
+
+      <section class="os" id="windows" data-os="windows" aria-labelledby="windows-title">
+        <p class="os-yours">你的电脑</p>
+        <h2 id="windows-title">Windows<span class="tag" data-beta="windows" hidden>测试版</span></h2>
+        <p class="os-req">Windows&nbsp;10<span class="nw">（1903 或更高版本）</span>或 Windows&nbsp;11</p>
+        <div class="os-dl">
+          <a class="btn" href="https://github.com/joyce1998/Tether/releases/latest" data-file="win-x64-nsis" data-note="windows">x64<small>安装程序<span data-size></span></small></a>
+          <a class="btn btn-neutral" href="https://github.com/joyce1998/Tether/releases/latest" data-file="win-arm64-nsis" data-note="windows">ARM64<small>安装程序<span data-size></span></small></a>
+        </div>
+        <p class="os-hint">大多数电脑选 x64。骁龙笔记本、Surface&nbsp;Pro&nbsp;X 这类 ARM 电脑选 ARM64。不确定的话，打开「设置」→「系统」→「系统信息」，「系统类型」里写着「基于 ARM 的处理器」就选 ARM64。</p>
+        <p class="after-download" data-after="windows" hidden>正在下载。安装程序没有代码签名，运行时 Windows 会显示「Windows 已保护你的电脑」：点「更多信息」，再点「仍要运行」。<a href="#install-windows">完整步骤</a></p>
+        <a class="more os-steps" href="#install-windows">在 Windows 上安装</a>
+      </section>
+
+      <section class="os" id="linux" data-os="linux" aria-labelledby="linux-title">
+        <p class="os-yours">你的电脑</p>
+        <h2 id="linux-title">Linux<span class="tag" data-beta="linux" hidden>测试版</span></h2>
+        <p class="os-req">64 位的 Ubuntu&nbsp;22.04、Debian&nbsp;12、Fedora&nbsp;39 或更新的版本</p>
+        <div class="os-dl">
+          <a class="btn" href="https://github.com/joyce1998/Tether/releases/latest" data-file="linux-x64-deb" data-kind="deb" data-note="deb">.deb<small><span data-arch>x64</span><span data-size></span></small></a>
+          <a class="btn btn-neutral" href="https://github.com/joyce1998/Tether/releases/latest" data-file="linux-x64-appimage" data-kind="appimage" data-note="appimage">AppImage<small><span data-arch>x64</span><span data-size></span></small></a>
+        </div>
+        <p class="os-hint">Ubuntu、Debian 和基于它们的发行版（例如 Linux&nbsp;Mint）用 .deb，其他发行版用 AppImage。不确定是哪种芯片，在终端里运行 <code>uname -m</code>：x86_64 是 x64，aarch64 是 arm64。</p>
+        <p class="os-alt"><span data-arch data-alt>arm64</span> 版：<a href="https://github.com/joyce1998/Tether/releases/latest" data-file="linux-arm64-deb" data-kind="deb" data-alt data-note="deb">.deb</a> · <a href="https://github.com/joyce1998/Tether/releases/latest" data-file="linux-arm64-appimage" data-kind="appimage" data-alt data-note="appimage">AppImage</a></p>
+        <p class="after-download" data-after="deb" hidden>正在下载。下载好以后，在终端里进入下载文件夹，运行 <code class="long">sudo apt install ./<span data-fill-name>Tether-0.5.1-linux-amd64.deb</span></code>。<a href="#install-linux">完整步骤</a></p>
+        <p class="after-download" data-after="appimage" hidden>正在下载。下载好以后，先给它加上运行权限：<code class="long">chmod +x <span data-fill-name>Tether-0.5.1-linux-x86_64.AppImage</span></code>，再打开它。<a href="#install-linux">完整步骤</a></p>
+        <a class="more os-steps" href="#install-linux">在 Linux 上安装</a>
+      </section>
+    </div>
+
+    <nav class="wrap dl-jump" aria-label="本页">
+      <a href="#verify">核对文件</a>
+      <a href="#whats-new">新变化</a>
+      <a href="#update">更新</a>
+      <a href="#uninstall">卸载</a>
+    </nav>
+    <p class="wrap dl-note">所有安装包也可以在 <a href="https://github.com/joyce1998/Tether/releases/latest" data-release-page>GitHub 的发布页</a>下载。从中国大陆下载 GitHub 上的文件有时很慢，可以换个时间或网络再试。</p>
+
+    <div class="wrap-text prose dl-body">
+
+      <h2 id="install-mac">在 Mac 上安装</h2>
+      <ol class="steps3">
+        <li>打开下载好的 DMG 文件。</li>
+        <li>在弹出的窗口里，把 Tether 拖到「应用程序」文件夹。</li>
+        <li>推出磁盘映像，然后在「应用程序」里打开 Tether。</li>
+      </ol>
+      <p>用 ZIP 的话，先解压（Safari 会自动解压，其他浏览器下载的，双击它就行），得到 Tether.app，把它拖进「应用程序」，再打开。</p>
+      <p class="note">要放进「应用程序」以后再打开。直接在磁盘映像或「下载」文件夹里打开的 Tether，以后没法自己更新。</p>
+
+      <h3 id="first-open">第一次打开</h3>
+      <p>Tether 没有经过 Apple 公证。没有公证的 App 从网上下载后，第一次打开会被 macOS 拦下来。放行一次之后，以后双击就能打开。</p>
+      <p><strong>macOS 15 及更高版本（包括 macOS 26）：</strong></p>
+      <ol>
+        <li>双击 Tether。看到「未打开“Tether”」的提示，点「完成」。</li>
+        <li>打开「系统设置」，点边栏里的「隐私与安全性」，往下滚到「安全性」。</li>
+        <li>那里有一行「已阻止“Tether”以保护Mac。」，点旁边的「仍要打开」。</li>
+        <li>在弹出的「打开“Tether”？」对话框里确认打开（按钮写着「仍要打开」或「打开」），然后输入登录密码，或者用触控 ID。</li>
+      </ol>
+      <p class="note">「仍要打开」只在你尝试打开后大约一小时内出现。找不到的话，再双击一次 Tether，然后回到「隐私与安全性」。</p>
+      <p><strong>macOS 12 到 14：</strong>在「访达」里打开「应用程序」文件夹，按住 Control 键点按 Tether，选「打开」，再点「打开」。也可以在设置里点「仍要打开」：macOS 13 和 14 在「系统设置」→「隐私与安全性」，macOS 12 在「系统偏好设置」→「安全性与隐私」→「通用」。</p>
+
+      <h3>提示“Tether”已损坏，无法打开</h3>
+      <p>在「终端」里运行下面这行，再打开 Tether：</p>
+      <pre class="cmd"><button class="copy" type="button" data-copy="#cmd-xattr" aria-label="拷贝去掉隔离标记的命令">拷贝</button><code id="cmd-xattr">xattr -dr com.apple.quarantine /Applications/Tether.app</code></pre>
+      <p>这行命令只是去掉 macOS 给网上下载的文件加的隔离标记，不会改动 App 本身。</p>
+
+      <h3>允许访问本地网络</h3>
+      <p>放行之后，macOS 会问「允许“Tether”查找本地网络中的设备？」，点「允许」。手机是通过局域网连到 Mac 的，选了「不允许」，手机就连不上。点错了可以去「系统设置」→「隐私与安全性」→「本地网络」，把 Tether 打开。这个询问从 macOS 15 开始才有。</p>
+      <p>接下来就可以<a href="docs.html#pairing">连接手机</a>了。</p>
+
+      <h2 id="install-windows">在 Windows 上安装<span class="tag" data-beta="windows" hidden>测试版</span></h2>
+      <ol>
+        <li>运行下载好的安装程序 <code class="long" data-name="win-x64-nsis">Tether-0.5.1-win-x64-setup.exe</code>（ARM64 版的文件名里是 arm64）。</li>
+        <li>Windows 会显示蓝色的「Windows 已保护你的电脑」窗口，说 Microsoft Defender SmartScreen 阻止了无法识别的应用启动。这是因为 Tether 的安装程序没有代码签名，下载的人也还不多，Windows 认不出它。点「更多信息」，窗口里会多出「仍要运行」按钮，点它。</li>
+        <li>安装程序直接开始安装，不问装在哪里，也不需要管理员权限。装好后 Tether 会自己打开，开始菜单和桌面上也会有 Tether 的快捷方式。</li>
+      </ol>
+      <p>下载时，浏览器也可能提示这个文件不常被下载，原因同上。在 Edge 里，把鼠标移到下载列表的这一项上，点「…」→「保留」，再点「显示更多」→「仍然保留」。</p>
+      <p class="note">Tether 装在你自己的账户下（<code>%LOCALAPPDATA%\Programs\tether</code>），这台电脑上的其他账户要用的话，各自装一次。</p>
+
+      <h3 id="firewall-windows">允许 Tether 通过防火墙</h3>
+      <p>第一次打开时，会弹出「Windows 安全中心警报」，说 Windows Defender 防火墙已阻止此应用的部分功能。勾上「专用网络」，点「允许访问」，之后如果弹出确认，点「是」。点了「取消」的话，手机就连不上。</p>
+      <p>还要确认电脑连的 <span class="nw">Wi-Fi</span> 是「专用网络」。Windows 常把新连上的网络设成「公用网络」，在公用网络上，防火墙会挡住手机的连接。在家里、公司这类你信任的网络上，打开「设置」→「网络和 Internet」→「WLAN」，点这个网络的属性，把「网络配置文件类型」改成「专用网络」。Windows 10 上是点网络名称，在「网络配置文件」里选「专用」。</p>
+      <p>点错了想改：打开「Windows 安全中心」→「防火墙和网络保护」→「允许应用通过防火墙」，点「更改设置」，找到 Tether，勾上「专用」，再点「确定」。</p>
+
+      <h3>在通知区域找到 Tether</h3>
+      <p>关掉 Tether 的窗口，它还在后台运行，图标在任务栏右下角的通知区域里。Windows 11 常把新图标收进「^」里面，可以把 Tether 的图标拖到任务栏上，让它一直显示。单击图标打开状态面板，双击打开主窗口，右键是菜单。</p>
+
+      <h2 id="install-linux">在 Linux 上安装<span class="tag" data-beta="linux" hidden>测试版</span></h2>
+      <p>Ubuntu、Debian 和基于它们的发行版（例如 Linux&nbsp;Mint）用 .deb，其他发行版用 AppImage。ARM 电脑选 arm64 版。</p>
+
+      <h3 id="install-deb">.deb</h3>
+      <ol>
+        <li>打开终端，进入下载文件夹（<code>cd ~/Downloads</code>，中文系统上可能是 <code>cd ~/下载</code>），运行下面这行。文件名前面的 <code>./</code> 不能省。
+          <pre class="cmd"><button class="copy" type="button" data-copy="#cmd-apt" aria-label="拷贝安装命令">拷贝</button><code id="cmd-apt">sudo apt install <span class="nw">./<span data-name="linux-x64-deb">Tether-0.5.1-linux-amd64.deb</span></span></code></pre>
+        </li>
+        <li>在应用菜单里打开 Tether，或者在终端里运行 <code>tether</code>。</li>
+      </ol>
+      <p>Tether 装在 <code>/opt/Tether</code>。安装时最后可能出现一行以 <code class="long">N: Download is performed unsandboxed as root</code> 开头的提示，这是 apt 在说它用 root 读了你文件夹里的安装包，不影响安装。在 Ubuntu 24.04 上，安装时还会加一份 AppArmor 配置，让 Tether 能照常使用沙盒。</p>
+
+      <h3 id="install-appimage">AppImage</h3>
+      <ol>
+        <li>把下载好的文件放到一个自己的文件夹里，例如 <code>~/Applications</code>。以后自动更新时，Tether 会直接替换这个文件。</li>
+        <li>给它加上运行权限：在文件管理器里右键它，选「属性」→「权限」，勾上「允许作为程序执行」；或者在终端里运行：
+          <pre class="cmd"><button class="copy" type="button" data-copy="#cmd-chmod" aria-label="拷贝加上运行权限的命令">拷贝</button><code id="cmd-chmod">chmod +x ~/Applications/<wbr><span class="nw" data-name="linux-x64-appimage">Tether-0.5.1-linux-x86_64.AppImage</span></code></pre>
+        </li>
+        <li>双击打开。有的文件管理器双击不会运行它，就在终端里运行这个文件。</li>
+      </ol>
+      <p class="note">AppImage 不会自己出现在应用菜单里。Ubuntu 24.04 不让 AppImage 使用沙盒，这时 Tether 会在关掉沙盒的情况下运行，所以在 24.04 上更推荐用 .deb。打不开、提示和 FUSE 有关的错误时，在终端里运行这个文件，后面加上 <code>--appimage-extract-and-run</code>。</p>
+
+      <h3 id="tray-linux">系统托盘</h3>
+      <p>Tether 的图标在系统托盘里。单击图标打开主窗口；新建终端、配对设备、允许手机访问、防止休眠这些都在它的菜单里（有的桌面右键打开菜单，有的单击就是菜单）。</p>
+      <p>GNOME 默认没有系统托盘。Ubuntu 已经带了托盘扩展；Fedora、Debian 这类原版 GNOME，要先装上「AppIndicator and KStatusNotifierItem Support」扩展，图标才会出现。没有托盘也能用：关掉窗口后 Tether 还在后台运行，再打开一次 Tether，窗口就回来了（.deb 装的在应用菜单里打开，AppImage 就再运行一次那个文件）。</p>
+
+      <h3 id="firewall-linux">防火墙</h3>
+      <p>Ubuntu 默认不开防火墙。你打开了 ufw 的话，放行 Tether 的端口（默认是 7420）：</p>
+      <pre class="cmd"><button class="copy" type="button" data-copy="#cmd-ufw" aria-label="拷贝 ufw 命令">拷贝</button><code id="cmd-ufw">sudo ufw allow 7420/tcp</code></pre>
+      <p>用 firewalld 的发行版（例如 Fedora、openSUSE），手机连不上时运行：</p>
+      <pre class="cmd"><button class="copy" type="button" data-copy="#cmd-firewalld" aria-label="拷贝 firewall-cmd 命令">拷贝</button><code id="cmd-firewalld">sudo <span class="nw">firewall-cmd</span> <span class="nw">--permanent</span> <span class="nw">--add-port=7420/tcp</span> &amp;&amp; sudo <span class="nw">firewall-cmd</span> <span class="nw">--reload</span></code></pre>
+
+      <h2 id="verify">核对文件</h2>
+      <p>下载完可以核对文件是否完整、有没有被改动过：算出文件的 SHA-256，和下面列的对比，应该完全一样。命令里的文件名换成你下载的那个。</p>
+      <p><strong>Mac：</strong>在「终端」里运行</p>
+      <pre class="cmd"><button class="copy" type="button" data-copy="#cmd-shasum" aria-label="拷贝 Mac 上的核对命令">拷贝</button><code id="cmd-shasum">shasum -a 256 ~/Downloads/<wbr><span class="nw" data-name="mac-arm64-dmg">Tether-0.5.1-mac-arm64.dmg</span></code></pre>
+      <p><strong>Windows：</strong>在 PowerShell 里运行。它输出的是大写字母，对比时不用管大小写</p>
+      <pre class="cmd"><button class="copy" type="button" data-copy="#cmd-hash-win" aria-label="拷贝 Windows 上的核对命令">拷贝</button><code id="cmd-hash-win">Get-FileHash "$HOME\Downloads\<wbr><span class="nw"><span data-name="win-x64-nsis">Tether-0.5.1-win-x64-setup.exe</span>"</span> <span class="nw">-Algorithm SHA256</span></code></pre>
+      <p><strong>Linux：</strong>在终端里运行</p>
+      <pre class="cmd"><button class="copy" type="button" data-copy="#cmd-hash-linux" aria-label="拷贝 Linux 上的核对命令">拷贝</button><code id="cmd-hash-linux">sha256sum ~/Downloads/<wbr><span class="nw" data-name="linux-x64-deb">Tether-0.5.1-linux-amd64.deb</span></code></pre>
+      <ul class="hashes" data-hashes aria-label="每个文件的大小和 SHA-256"></ul>
+      <p class="note" data-hashes-missing hidden>这一版的校验值还没有发布，过一会儿再来看。</p>
+      <noscript><p class="note">每个文件的大小和 SHA-256 要打开 JavaScript 才会列出来，也可以在 <a href="https://github.com/joyce1998/Tether/releases/latest">GitHub 的发布页</a>上看。</p></noscript>
+
+      <h2 id="whats-new">0.5.1 的新变化</h2>
+      <ul>
+        <li>有了 Windows 版和 Linux 版。在 Windows 上默认用 PowerShell。快捷键用 Ctrl+Shift 加一个键，单按 Ctrl 的组合（比如 Ctrl+C）照常发给终端。</li>
+        <li>Intel 处理器的 Mac 也能用了。</li>
+        <li>自动检查更新：有新版本时提醒一次，点「更新」，Tether 换上新版本后自己重新打开，终端会恢复。</li>
+        <li>分屏最多 9 个窗格。把侧栏里的终端拖到任意一个窗格的边上；<kbd data-pc="Ctrl+Shift+D">⌘D</kbd>、<kbd data-pc="Ctrl+Shift+O">⇧⌘D</kbd> 在聚焦的窗格旁边新开一个。</li>
+        <li>「出门在外」向导：一步步装好 Tailscale、开启 HTTPS 地址、用手机重新配对、打开锁屏推送，每一步做完自动打勾。</li>
+      </ul>
+      <p><a class="more" href="docs.html#changelog">以前的版本</a></p>
+
+      <h2 id="update">更新到新版本</h2>
+      <p>从 0.5.1 开始，Tether 会自己检查更新。有新版本时它会提醒你一次，在「设置」里「有新版本」那一行点「更新」，Tether 下载新版本、核对过签名和 SHA-256，换上以后自己重新打开。终端会回到原来的目录，之前的输出也在；正在运行的程序会停止，所以有终端开着时 Tether 会先问你。更多说明在<a href="docs.html#update">文档</a>里。</p>
+      <ul>
+        <li><strong>Mac：</strong>Tether 要在「应用程序」文件夹里才能自己更新。</li>
+        <li><strong>Windows：</strong>新版本在后台安装，装好后 Tether 自己打开。</li>
+        <li><strong>Linux AppImage：</strong>Tether 直接替换原来那个文件，所以它要放在你自己能写入的文件夹里。</li>
+        <li><strong>Linux .deb：</strong>Tether 没法自己替换系统目录里的文件。有新版本时它会提醒你，点「前往下载」回到这个页面，先退出 Tether，下载新的 .deb，再运行一次 <code class="long">sudo apt install ./文件名</code>。</li>
+      </ul>
+      <p>还在用 0.5.0 的话，要按下面的步骤手动更新这一次，以后就不用了。</p>
+
+      <h3 id="update-manual">从 0.5.0 手动更新</h3>
+      <ol>
+        <li>在菜单栏面板里点「退出 Tether」，确认框里点「退出」。退出前，Tether 会存好所有终端。</li>
+        <li>下载新版本的 DMG，打开它，把 Tether 拖到「应用程序」，提示已有同名项目时选「替换」。</li>
+        <li>打开新版本。它也是从网上下载的，第一次打开同样要在「隐私与安全性」里放行一次。</li>
+      </ol>
+      <p>配对过的手机和所有设置都存在 <code>~/.tether</code> 里，换版本不受影响，手机不用重新配对。终端会按原来的名字回到原来的目录，之前的输出也在；正在运行的程序会停止。</p>
+      <p>手机上的界面是电脑提供的网页。更新之后，在手机上把 Tether 关掉再打开一次，就是新版本的界面。</p>
+
+      <h2 id="uninstall">卸载</h2>
+      <p>先关掉「登录时自动启动」（在菜单栏面板、通知区域的面板或者托盘菜单里），再退出 Tether。</p>
+
+      <h3>Mac</h3>
+      <ol>
+        <li>把「应用程序」里的 Tether 拖到废纸篓。</li>
+        <li>想把数据也删掉，在「终端」里运行下面这行。它会删除配对过的设备、设置和存下的终端。
+          <pre class="cmd"><button class="copy" type="button" data-copy="#cmd-rm-mac" aria-label="拷贝 Mac 上删除数据的命令">拷贝</button><code id="cmd-rm-mac">rm -rf ~/.tether ~/Library<wbr>/"Application Support"<wbr>/Tether ~/Library<wbr>/Caches<wbr>/Tether ~/Library<wbr>/Preferences<wbr>/app.tether.mac.plist</code></pre>
+        </li>
+      </ol>
+      <p class="note">已经删了 App 才想起登录项的话，可以在「系统设置」→「通用」→「登录项与扩展」里把 Tether 移除（macOS 13 和 14 里叫「登录项」）；macOS 12 在「系统偏好设置」→「用户与群组」→「登录项」。</p>
+
+      <h3>Windows</h3>
+      <ol>
+        <li>打开「设置」→「应用」→「已安装的应用」，找到 Tether，点右边的「…」→「卸载」。Windows 10 上是「设置」→「应用」→「应用和功能」，点 Tether，再点「卸载」。</li>
+        <li>想把数据也删掉，在 PowerShell 里运行下面这行。
+          <pre class="cmd"><button class="copy" type="button" data-copy="#cmd-rm-win" aria-label="拷贝 Windows 上删除数据的命令">拷贝</button><code id="cmd-rm-win">Remove-Item -Recurse -Force "$HOME\.tether", "$env:APPDATA\Tether", <span class="nw">"$env:LOCALAPPDATA\tether-updater"</span> <span class="nw">-ErrorAction SilentlyContinue</span></code></pre>
+        </li>
+      </ol>
+      <p class="note">卸载以后，开机时还在启动 Tether 的话，在「设置」→「应用」→「启动」里把它关掉。</p>
+
+      <h3>Linux</h3>
+      <ol>
+        <li>.deb：运行 <code>sudo apt remove tether</code>。AppImage：删掉那个文件。</li>
+        <li>想把数据也删掉，在终端里运行下面这行。
+          <pre class="cmd"><button class="copy" type="button" data-copy="#cmd-rm-linux" aria-label="拷贝 Linux 上删除数据的命令">拷贝</button><code id="cmd-rm-linux">rm -rf ~/.tether ~/.config/<wbr>Tether <span class="nw">~/.cache/tether-updater</span> ~/.config/<wbr>autostart/<wbr>tether.desktop</code></pre>
+        </li>
+      </ol>
+
+      <p>最后，在手机上把主屏幕上的 Tether 图标删掉。手机发来的照片和文件在下载文件夹的 Tether 文件夹里，是你自己的文件，上面的命令不会动它们。</p>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <ul class="footer-links">
+        <li><a href="index.html">概览</a></li>
+        <li><a href="docs.html">使用文档</a></li>
+        <li><a href="download.html">下载</a></li>
+        <li><a href="docs.html#changelog">更新日志</a></li>
+      </ul>
+      <p>Tether <span data-rel="version">0.5.1</span>。电脑：macOS 12 或更高版本、Windows 10 或 11、64 位 Linux；手机：iPhone 上的 Safari 或安卓手机上的 Chrome。</p>
+      <p>Copyright © 2026 Tether</p>
+    </div>
+  </footer>
+
+  <script src="assets/release.js"></script>
+  <script src="assets/site.js"></script>
+</body>
+</html>

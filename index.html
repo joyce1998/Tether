@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tether：电脑上的终端，在手机上接着用</title>
+  <meta name="description" content="Tether 装在你的 Mac、Windows 或 Linux 电脑上。终端照旧在电脑上运行，手机用浏览器打开就是同一个会话，输出实时同步。程序问你 (y/n)、AI 助手等你回话时，Tether 会提醒你。不用账号，数据端到端加密。">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/icon/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/icon/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="index.html"><img src="assets/icon/favicon-64.png" width="24" height="24" alt="">Tether</a>
+      <nav class="nav-links" aria-label="网站">
+        <a href="index.html" aria-current="page">概览</a>
+        <a href="docs.html">文档</a>
+        <a class="btn btn-sm" href="download.html">下载</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- 首屏 -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <img class="hero-icon" src="assets/icon/icon-512.png" width="112" height="112" alt="">
+        <h1 id="hero-title">
+          <span class="eyebrow">Tether</span>
+          <span class="display"><span class="nw">电脑上的终端，</span><span class="nw">在手机上接着用。</span></span>
+        </h1>
+        <p class="lead">命令还是在电脑上跑。手机上打开的是同一个终端，输出实时同步，也能直接打字。程序问你&nbsp;(y/n)、AI 助手等你回话，Tether 都会提醒你。</p>
+        <div class="cta">
+          <a class="btn" href="download.html" aria-describedby="hero-req">下载 Tether</a>
+          <a class="more" href="docs.html">使用文档</a>
+        </div>
+        <p class="cta-note" id="hero-req"><span class="nw">有 Mac、Windows 和 Linux 版，</span><span class="nw">手机不用装 App。</span></p>
+      </div>
+      <figure class="wrap-wide hero-shot">
+        <div class="mac">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="assets/shots/mac-term-dark-1440.webp 1440w, assets/shots/mac-term-dark.webp 2880w" sizes="(max-width: 1223px) calc(100vw - 44px), 1180px">
+            <img src="assets/shots/mac-term-light.webp" srcset="assets/shots/mac-term-light-1440.webp 1440w, assets/shots/mac-term-light.webp 2880w" sizes="(max-width: 1223px) calc(100vw - 44px), 1180px" width="1440" height="900" fetchpriority="high" decoding="async" alt="Tether 在 Mac 上的窗口。左边侧栏是各个终端和它们的状态，右边的 Claude Code 做完了一轮，在等你回复，上方的提示条里有「回复」按钮。">
+          </picture>
+        </div>
+        <figcaption>截图来自 macOS。在 Windows 和 Linux 上，窗口的标题栏和字体跟着系统，其余都一样。</figcaption>
+      </figure>
+    </section>
+
+    <!-- 在手机上接着用 -->
+    <section class="section alt" aria-labelledby="phone-title">
+      <div class="wrap duo">
+        <div>
+          <h2 class="h2" id="phone-title"><span class="nw">构建跑着，</span><span class="nw">人可以走开。</span></h2>
+          <p class="lead">构建要跑二十分钟，Claude Code 还在改代码，你不用守在桌前。打开手机上的 Tether，看到的就是电脑上那几个终端。翻输出、敲命令都可以，跑错了就按 ^C。</p>
+          <ul class="points">
+            <li><strong>不用装 App。</strong>手机浏览器打开电脑的地址就能用。iPhone 上添加到主屏幕，以后点图标进来，和 App 一样全屏。</li>
+            <li><strong>手机上也好打字。</strong>键盘上方有一排 ⌃ ⌥ Esc Tab 和方向键，顺序可以自己排。长的提示词在多行编辑框里写好再发。</li>
+            <li><strong>谁在用，就按谁的屏幕排版。</strong>你在手机上打开这个终端或者打字，它就换成手机的宽度；回到电脑上切到它或者打字，或者手机离开这个终端，又变回电脑窗口的宽度。</li>
+          </ul>
+        </div>
+        <figure class="duo-media">
+          <div class="phone">
+            <div class="phone-body">
+              <div class="phone-screen">
+                <picture>
+                  <source media="(prefers-color-scheme: dark)" srcset="assets/shots/iphone-list-dark-589.webp 589w, assets/shots/iphone-list-dark.webp 1179w" sizes="(max-width: 734px) 226px, (max-width: 1068px) 245px, 282px">
+                  <img src="assets/shots/iphone-list-light.webp" srcset="assets/shots/iphone-list-light-589.webp 589w, assets/shots/iphone-list-light.webp 1179w" sizes="(max-width: 734px) 226px, (max-width: 1068px) 245px, 282px" width="393" height="852" loading="lazy" decoding="async" alt="iPhone 上的 Tether 终端列表。每一行是电脑上的一个终端，写着名字、状态和最新一行输出；在等你的终端下面直接有「回复」「y · 同意」「n · 拒绝」按钮。">
+                </picture>
+              </div>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 提醒与一键回复 -->
+    <section class="section" aria-labelledby="alert-title">
+      <div class="wrap duo flip">
+        <div>
+          <h2 class="h2" id="alert-title"><span class="nw">该你回答的时候，</span><span class="nw">它会叫你。</span></h2>
+          <p class="lead">数据库迁移开始前问你 (y/n)，ssh 第一次连新机器要你确认指纹，Claude Code 改完一轮在等你下一句。这些时候 Tether 都认得出来，会提醒你，回答直接做成按钮。</p>
+          <ul class="points">
+            <li><strong>认得 AI 助手。</strong>Claude Code、Codex、Gemini、Aider、OpenCode 等跑在终端里时，列表上显示「正在工作」「等你回复」「需要确认」。它答完一轮就提醒你，点「回复」直接跳到输入处。</li>
+            <li><strong>在哪儿都能答。</strong>电脑上的横幅、手机上 Tether 里弹出的横幅、Mac 和 Windows 的系统通知，都带着回答按钮。在 Mac 的通知里还能直接打字回 AI 助手。手机锁屏收到的推送点开，就是那个终端。</li>
+            <li><strong>答过就不再提醒。</strong>在一处答完，其他地方的按钮和横幅自己消失，通知也会收回，你按的 y 不会误发给接下来运行的程序。</li>
+            <li><strong>密码你自己输。</strong>遇到密码提示，按钮只带你到输入处，不替你按回车。</li>
+            <li><strong>长命令跑完也说一声。</strong>超过 10 秒的命令结束时提醒你，附上退出码和用时。多长算长命令可以在设置里改，也可以加几个关键词，比如 ERROR，输出里一出现就提醒你。</li>
+          </ul>
+          <p class="small after-points">想在锁屏时也收到提醒，按 Tether 里的「出门在外」向导，用 Tailscale 给它配一个 HTTPS 地址，<a href="docs.html#tailscale">文档里有说明</a>。</p>
+        </div>
+        <figure class="duo-media">
+          <div class="phone">
+            <div class="phone-body">
+              <div class="phone-screen">
+                <picture>
+                  <source media="(prefers-color-scheme: dark)" srcset="assets/shots/iphone-term-dark-589.webp 589w, assets/shots/iphone-term-dark.webp 1179w" sizes="(max-width: 734px) 226px, (max-width: 1068px) 245px, 282px">
+                  <img src="assets/shots/iphone-term-light.webp" srcset="assets/shots/iphone-term-light-589.webp 589w, assets/shots/iphone-term-light.webp 1179w" sizes="(max-width: 734px) 226px, (max-width: 1068px) 245px, 282px" width="393" height="852" loading="lazy" decoding="async" alt="iPhone 上打开的 db-migrate 终端。迁移脚本在问 Apply 3 migrations? (y/n)，终端下面是「y · 同意」和「n · 拒绝」两个按钮，再往下是快捷键栏和输入栏。">
+                </picture>
+              </div>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 概览与分屏 -->
+    <section class="section alt" aria-labelledby="overview-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="h2" id="overview-title">把所有终端摊开看。</h2>
+          <p class="lead">按 <kbd data-pc="Ctrl+Shift+\">⇧⌘\</kbd>，窗口里的终端<wbr>全部变成实时缩略图，谁在跑、谁在等你，扫一眼就知道。点一下放大，再按一次回到概览。等你回答的那个，在缩略图上就能答。</p>
+        </div>
+        <div class="stack">
+          <figure>
+            <div class="mac">
+              <picture>
+                <source media="(prefers-color-scheme: dark)" srcset="assets/shots/mac-overview-dark-1440.webp 1440w, assets/shots/mac-overview-dark.webp 2880w" sizes="(max-width: 1023px) calc(100vw - 44px), 980px">
+                <img src="assets/shots/mac-overview-light.webp" srcset="assets/shots/mac-overview-light-1440.webp 1440w, assets/shots/mac-overview-light.webp 2880w" sizes="(max-width: 1023px) calc(100vw - 44px), 980px" width="1440" height="900" loading="lazy" decoding="async" alt="终端概览。所有终端以实时缩略图平铺，等你回答的两个带橙色边框，缩略图底部就有回答按钮。">
+              </picture>
+            </div>
+          </figure>
+          <div>
+            <div class="feature-head">
+              <h3 class="h3">分屏对照着看。</h3>
+              <p>一个窗口里最多并排 9 个终端。把侧栏里的终端拖到某个窗格的边上，就在那一边分出来。<kbd data-pc="Ctrl+Shift+D">⌘D</kbd>&nbsp;在当前目录新开一个放在右边，<kbd data-pc="Ctrl+Shift+O">⇧⌘D</kbd>&nbsp;放在下面。分隔线可以拖，双击它，两边恢复一样大。</p>
+            </div>
+            <figure>
+              <div class="mac">
+                <picture>
+                  <source media="(prefers-color-scheme: dark)" srcset="assets/shots/mac-split-dark-1440.webp 1440w, assets/shots/mac-split-dark.webp 2880w" sizes="(max-width: 1023px) calc(100vw - 44px), 980px">
+                  <img src="assets/shots/mac-split-light.webp" srcset="assets/shots/mac-split-light-1440.webp 1440w, assets/shots/mac-split-light.webp 2880w" sizes="(max-width: 1023px) calc(100vw - 44px), 980px" width="1440" height="900" loading="lazy" decoding="async" alt="分屏。左边的 web 终端在跑 npm run dev，右边的 deploy 终端刚跑完发布脚本和冒烟测试。">
+                </picture>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 重启后恢复 -->
+    <section class="section" aria-labelledby="restore-title">
+      <div class="wrap-text statement">
+        <h2 class="h2" id="restore-title">重启以后终端都还在。</h2>
+        <p class="lead">装了新版本，或者电脑重启了，再打开 Tether 时，每个终端都按原来的名字回到原来的目录，之前的输出也还在。旧输出下面有一行「以上是 Tether 重启前的输出」，分得清哪些是之前的。</p>
+        <p>Tether 每 15 秒存一次，就算被强制关掉，最多丢最后十几秒的输出。正在运行的程序会停止，要你重新运行。只是关掉窗口的话，什么都不会停：Tether 留在菜单栏（Windows 上是通知区域，Linux 上是系统托盘）里，手机照样能连。</p>
+      </div>
+    </section>
+
+    <!-- 隐私 -->
+    <section class="section alt" aria-labelledby="privacy-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="h2" id="privacy-title"><span class="nw">不用账号，</span><span class="nw">中间也没有服务器。</span></h2>
+          <p class="lead">Tether 跑在你的电脑上，手机直接连到电脑，没有&nbsp;Tether&nbsp;的服务器在中间转发。不用注册，也不收集使用数据。</p>
+        </div>
+        <ul class="grid two">
+          <li>
+            <h3>每次连接都换新密钥</h3>
+            <p>终端内容在手机和电脑之间加密传输，消息带递增计数，重放的会被拒绝。在家里或公司的 <span class="nw">Wi-Fi</span> 里，其他人看不到内容。</p>
+          </li>
+          <li>
+            <h3>扫码，或者输 6 位配对码</h3>
+            <p>二维码和配对码都只能用一次，5 分钟后失效。配对码连错 5 次就作废。同一个网络里偷听的人拿不到密钥，也没法拿回去慢慢试这 6 位数。</p>
+          </li>
+          <li>
+            <h3>随时撤销</h3>
+            <p>电脑上能看到配对过的每一台设备，什么时候在线、延迟多少。撤销以后，那台设备立刻断开。</p>
+          </li>
+          <li>
+            <h3>一个开关暂停</h3>
+            <p>关掉「允许手机访问」，所有手机马上断开，终端照常运行。再打开，手机几秒内自己连回来。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 小功能 -->
+    <section class="section" aria-labelledby="more-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="h2" id="more-title"><span class="nw">还有一些</span><span class="nw">顺手的地方。</span></h2>
+        </div>
+        <ul class="grid">
+          <li>
+            <h3>查找</h3>
+            <p><kbd data-pc="Ctrl+Shift+F">⌘F</kbd> 在输出里找，所有匹配都标出来，显示第几个、共几个。手机上也能查。</p>
+          </li>
+          <li>
+            <h3>历史联想</h3>
+            <p>在提示符后打字，光标后面出现灰色的补全，按 <kbd>→</kbd> 接受。用的是你平时的 shell 历史。</p>
+          </li>
+          <li>
+            <h3>拖入文件夹</h3>
+            <p>从访达、文件资源管理器或文件管理器拖进终端，插入路径，或者直接 cd 进去。拖到侧栏，就在那个文件夹新开一个终端。</p>
+          </li>
+          <li>
+            <h3>从手机发照片</h3>
+            <p>选一张截图发到电脑，路径自动填进终端，接着交给 Claude Code 看。文件也一样。</p>
+          </li>
+          <li>
+            <h3>出门在外也能连</h3>
+            <p>不在同一个 <span class="nw">Wi-Fi</span> 时，按 Tether 里的向导装好 Tailscale，手机在哪儿都能连上，锁屏时也能收到提醒。</p>
+          </li>
+          <li>
+            <h3>一看就知道状态</h3>
+            <p>开着几个终端、几台手机连着，点开 Tether 的图标就能看到：Mac 上在菜单栏，Windows 上在通知区域，Linux 上在系统托盘。暂停手机访问、防止休眠也在这里。</p>
+          </li>
+          <li>
+            <h3>自己检查更新</h3>
+            <p>有新版本时提醒你一次。点「更新」，Tether 换上新版本后自己重新打开，终端都会回来。</p>
+          </li>
+          <li>
+            <h3>快捷键不占终端的键</h3>
+            <p>Mac 上用 ⌘。Windows 和 Linux 上用 Ctrl+Shift 加一个键，单按 Ctrl 的组合照常发给终端，Ctrl+C 照样能中断程序。</p>
+          </li>
+          <li>
+            <h3>浅色和深色</h3>
+            <p>界面跟着系统切换。终端配色可以单独选自动、浅色或深色。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 下载 -->
+    <section class="section alt closing" aria-labelledby="get-title">
+      <div class="wrap">
+        <img src="assets/icon/icon-512.png" width="96" height="96" alt="" loading="lazy">
+        <h2 class="h2" id="get-title">下载 Tether</h2>
+        <p><span data-rel="version">0.5.1</span> 版<span data-rel-show="date" hidden>，<span data-rel="date"></span>发布</span>。<span class="nw">适用于 macOS 12 或更高版本、</span><span class="nw">Windows 10 和 11，</span><span class="nw">以及 64 位的 Linux。</span></p>
+        <div class="cta">
+          <a class="btn" href="download.html">下载 Tether</a>
+          <a class="more" href="download.html#whats-new">这一版的新变化</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <ul class="footer-links">
+        <li><a href="index.html">概览</a></li>
+        <li><a href="docs.html">使用文档</a></li>
+        <li><a href="download.html">下载</a></li>
+        <li><a href="docs.html#changelog">更新日志</a></li>
+      </ul>
+      <p>Tether <span data-rel="version">0.5.1</span>。电脑：macOS 12 或更高版本、Windows 10 或 11、64 位 Linux；手机：iPhone 上的 Safari 或安卓手机上的 Chrome。</p>
+      <p>Copyright © 2026 Tether</p>
+    </div>
+  </footer>
+
+  <script src="assets/release.js"></script>
+  <script src="assets/site.js"></script>
+</body>
+</html>
