@@ -288,6 +288,16 @@ kbd { font-family: var(--font); font-size: 1em; white-space: nowrap; }
 .cta-note { margin-top: var(--sp-4); font-size: var(--fs-small); color: var(--label-2); }
 .after-download { margin-top: var(--sp-3); font-size: var(--fs-small); color: var(--label); }
 
+/* 首页的「按系统下载」：三个按钮一样宽，下面一行小字写会下载哪个文件；访客自己的系统是蓝色 */
+.pick { display: grid; justify-items: center; gap: var(--sp-4); }
+.pick-row { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-4) var(--sp-4); }
+.pick-os { display: grid; justify-items: center; align-content: start; gap: 6px; }
+.pick-os .btn { min-width: 176px; }
+.pick-sub { display: inline-flex; align-items: center; min-height: 20px; font-size: var(--fs-fine); color: var(--label-2); white-space: nowrap; }
+.pick-sub .tag { margin-inline-start: 6px; padding: 0 5px; font-size: 11px; line-height: 16px; }
+.pick-after { max-width: 600px; margin-top: 0; text-align: center; }
+.pick-more { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-2) var(--sp-6); font-size: var(--fs-body); }
+
 /* ---------- 文字样式 ---------- */
 .eyebrow {
   display: block;
@@ -333,6 +343,7 @@ kbd { font-family: var(--font); font-size: 1em; white-space: nowrap; }
 .hero h1 .display { margin-top: var(--sp-3); }
 .hero .lead { max-width: 640px; margin: var(--sp-5) auto 0; }
 .hero .cta { margin-top: var(--sp-6); }
+.hero .pick { margin-top: var(--sp-6); }
 .hero-shot { margin-top: var(--sp-8); }
 
 /* 文字和手机截图左右排 */
@@ -383,6 +394,11 @@ kbd { font-family: var(--font); font-size: 1em; white-space: nowrap; }
 .closing img { display: block; width: 96px; height: 96px; margin: 0 auto var(--sp-4); }
 .closing p { margin-top: var(--sp-4); color: var(--label-2); }
 .closing .cta { margin-top: var(--sp-6); }
+.closing .pick { margin-top: var(--sp-6); }
+/* 下载组里的段落用组自己的间距；下一步提示和首屏一样用正文颜色 */
+.pick .pick-after,
+.pick .pick-more { margin-top: 0; }
+.closing .pick-after { color: var(--label); }
 
 /* ---------- 截图外框 ---------- */
 figure { margin: 0; }
@@ -732,6 +748,11 @@ td { color: var(--label); }
 
 /* ---------- 小屏 ---------- */
 @media (max-width: 734px) {
+  .pick-row { flex-direction: column; flex-wrap: nowrap; width: min(100%, 320px); gap: var(--sp-3); }
+  .pick-os { width: 100%; }
+  .pick-os .btn { width: 100%; }
+  .pick-os.is-yours { order: -1; }
+  .pick-more { font-size: var(--fs-small); }
   :root {
     --fs-display: 34px;
     --fs-h2: 30px;

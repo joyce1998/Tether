@@ -138,7 +138,51 @@
       });
     });
     fillNames();
+    fillPicks();
   }
+
+  /* ---------- 首页：按系统下载 ---------- */
+  // 三个按钮各下载那个系统推荐的安装包（芯片按上面 pickFor 的规则），访客自己的系统是蓝色。
+  // 手机和平板上不直接下载安装包，带到下载页对应的系统
+  var PICK_WHAT = {
+    'mac-arm64-dmg': 'Apple 芯片 · DMG', 'mac-x64-dmg': 'Intel 处理器 · DMG',
+    'win-x64-nsis': 'x64 安装程序', 'win-arm64-nsis': 'ARM64 安装程序',
+    'linux-x64-deb': '.deb · x64', 'linux-arm64-deb': '.deb · arm64',
+    'linux-x64-appimage': 'AppImage · x64', 'linux-arm64-appimage': 'AppImage · arm64'
+  };
+  function fillPicks() {
+    $$('a[data-pick]').forEach(function (a) {
+      var os = a.getAttribute('data-pick');
+      var key = pickFor(os);
+      var box = closest(a, '.pick-os');
+      if (box) box.classList.toggle('is-yours', who.os === os);
+      a.classList.toggle('btn-neutral', who.os !== os);
+      if (who.mobile) {
+        a.removeAttribute('data-file');
+        a.href = 'download.html#' + os;
+      } else {
+        setFile(a, key);
+      }
+      var f = file(key);
+      var sub = box && box.querySelector('[data-pick-sub]');
+      if (sub && PICK_WHAT[key]) sub.textContent = PICK_WHAT[key] + (f && f.size ? ' · ' + mb(f.size) : '');
+    });
+  }
+  // 点了下载，在这组按钮下面说一声下一步怎么装
+  document.addEventListener('click', function (e) {
+    var a = closest(e.target, 'a[data-pick][data-file]');
+    var group = closest(a, '[data-pick-group]');
+    var f = a && file(a.getAttribute('data-file'));
+    if (!group || !f) return;
+    var os = a.getAttribute('data-pick');
+    var kind = os === 'linux' ? (/appimage$/.test(a.getAttribute('data-file')) ? 'appimage' : 'deb') : os;
+    $$('[data-pick-after]', group).forEach(function (note) {
+      var show = note.getAttribute('data-pick-after') === kind;
+      note.hidden = !show;
+      if (show) $$('[data-fill-name]', note).forEach(function (el) { el.textContent = f.name; });
+    });
+  });
+
   mark();
   $$('[data-mobile-note]').forEach(function (el) { el.hidden = !who.mobile; });
 
