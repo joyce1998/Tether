@@ -546,6 +546,7 @@
 
         <h3 id="faq-windows-shell">Windows 上用的是哪个 shell</h3>
         <p>装了 PowerShell 7（pwsh）就用它，没有就用系统自带的 Windows PowerShell。想换成命令提示符（cmd），在「设置」→「新终端使用」里选，之后新开的终端就用它。</p>
+        <p>ARM 处理器的 Windows 电脑（比如骁龙笔记本）建议装上 PowerShell 7。系统自带的 Windows PowerShell 在 ARM 上启动很慢，我们在测试机上量到每开一个终端要等二三十秒；PowerShell 7 不到一秒。在 Microsoft Store 搜「PowerShell」安装，或者运行 <code>winget install Microsoft.PowerShell</code>，装好后新开的终端会自动用它。</p>
         <p><strong>PowerShell：</strong>你的 <code>$PROFILE</code> 照常加载，<span class="nw">oh-my-posh</span>、starship 这类提示符也能用。Tether 能知道命令什么时候开始和结束、退出码和当前目录，历史联想用的是 PSReadLine 的历史。没有 PSReadLine 时（比如开着读屏软件，或者卸掉了这个模块），目录和历史照常，但 Tether 看不出命令什么时候在跑，命令结束和等待输入的提醒就没有了。</p>
         <p><strong>命令提示符（cmd）：</strong>能用，功能少一些：命令结束的提醒里没有退出码；cmd 没有历史文件，联想里只有在 Tether 里执行过的命令。装了 Clink，或者用 AutoRun 改了提示符的话，Tether 就看不出命令的开始和结束，也跟不上当前目录。</p>
         <p>这一版还不能直接选 Git Bash 或 WSL。可以在 PowerShell 的终端里运行 <code>wsl</code> 或 <code>bash</code>，只是 Tether 看不到里面的命令和目录。</p>
