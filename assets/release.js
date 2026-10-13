@@ -39,13 +39,13 @@ window.TETHER_RELEASE = {
     },
     "win-x64-nsis": {
       "name": "Tether-0.5.1-win-x64-setup.exe",
-      "size": 89538138,
-      "sha256": "f2e28d338c78f0a19c3c7684ed084026f9e27e1de7f717ab9520de658b4f65e0"
+      "size": 99933815,
+      "sha256": "2bd4c2be617cf6555749108aaf0724b9fc0dfc4fc8c5460a2e43788937f48380"
     },
     "win-arm64-nsis": {
       "name": "Tether-0.5.1-win-arm64-setup.exe",
-      "size": 83455309,
-      "sha256": "8183bc4645d370c5ff90048cc31a85751d749e8532603c7c286cdaa3992e10cd"
+      "size": 94882040,
+      "sha256": "a33f8705b1036a528925914d3c1ce4cda8946ae2a39614ec5e94c60c957abf68"
     },
     "linux-x64-appimage": {
       "name": "Tether-0.5.1-linux-x86_64.AppImage",
